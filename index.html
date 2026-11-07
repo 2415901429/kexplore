@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFTERGLOW | Event Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="announcement">
+        ✳ GOOD THINGS HAPPEN WHEN WE GET TOGETHER
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">✳ AFTERGLOW</a>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#events">Discover</a>
+                <a href="#about">About</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="themeToggle">☼</button>
+                <button class="nav-cta" onclick="openRegistration()">Join Us ↗</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero container" id="home">
+
+            <div class="hero-content">
+                <p class="eyebrow">THE CITY IS YOURS TO EXPLORE</p>
+
+                <h1>
+                    Make room<br>
+                    for <span>moments.</span> ✳
+                </h1>
+
+                <p class="hero-description">
+                    Little plans. Big energy. Find the people, places
+                    and experiences that make a day feel like a story.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#events" class="primary-btn">Explore Events ↘</a>
+                    <a href="#about" class="text-btn">Discover More ↗</a>
+                </div>
+
+                <p class="hero-note">
+                    ✦ 2.4K+ curious people found their crowd
+                </p>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=85"
+                     alt="Live music event">
+                <div class="image-sticker">LIVE A<br>LITTLE MORE ✳</div>
+            </div>
+
+        </section>
+
+        <!-- TICKER -->
+        <div class="ticker">
+            MAKE MEMORIES ✳ MEET YOUR PEOPLE ✳ TRY SOMETHING NEW ✳
+        </div>
+
+        <!-- EVENTS SECTION -->
+        <section class="events-section container" id="events">
+
+            <div class="section-heading">
+                <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+                <h2>Find your <span>thing.</span></h2>
+                <p>Discover experiences worth showing up for.</p>
+            </div>
+
+            <div class="event-controls">
+
+                <div class="filters">
+                    <button class="filter active" data-category="All">All</button>
+                    <button class="filter" data-category="Music">Music</button>
+                    <button class="filter" data-category="Technology">Technology</button>
+                    <button class="filter" data-category="Art & Culture">Art & Culture</button>
+                    <button class="filter" data-category="Community">Community</button>
+                </div>
+
+                <input type="text" id="searchInput"
+                       placeholder="Search events...">
+
+            </div>
+
+            <div class="event-grid" id="eventGrid"></div>
+
+            <div id="emptyState" hidden>
+                <h3>No events found!</h3>
+                <p>Try another search or category.</p>
+            </div>
+
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+
+            <div class="container about-content">
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=85"
+                         alt="Friends enjoying an event">
+                </div>
+
+                <div class="about-text">
+                    <p class="eyebrow">NOT JUST ANOTHER EVENT LIST</p>
+
+                    <h2>
+                        Life's better<br>
+                        <span>together.</span>
+                    </h2>
+
+                    <p>
+                        We believe the best stories start with a simple
+                        "I'm in". AFTERGLOW brings interesting events
+                        into one happy place so you can spend less time
+                        scrolling and more time living.
+                    </p>
+
+                    <div class="stats">
+                        <div>
+                            <h3>06</h3>
+                            <p>CURATED EVENTS</p>
+                        </div>
+
+                        <div>
+                            <h3>04</h3>
+                            <p>EVENT CATEGORIES</p>
+                        </div>
+
+                        <div>
+                            <h3>∞</h3>
+                            <p>NEW MEMORIES</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- COUNTDOWN -->
+        <section class="countdown-section container">
+
+            <p class="eyebrow">THE CLOCK IS TICKING</p>
+
+            <h2>Something good is <span>coming.</span></h2>
+
+            <div class="countdown" id="countdown">
+                <div><h3 id="days">00</h3><p>DAYS</p></div>
+                <div><h3 id="hours">00</h3><p>HOURS</p></div>
+                <div><h3 id="minutes">00</h3><p>MINUTES</p></div>
+                <div><h3 id="seconds">00</h3><p>SECONDS</p></div>
+            </div>
+
+            <p>Next up: The Creative Jam · 22 November 2026</p>
+
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter">
+
+            <div class="container">
+                <p class="eyebrow">THE GOOD STUFF, OCCASIONALLY</p>
+                <h2>Stay in the <span>know.</span></h2>
+                <p>Fresh plans, interesting people, zero spam.</p>
+
+                <form id="newsletterForm">
+                    <input type="email" id="newsletterEmail"
+                           placeholder="Your email address" required>
+                    <button type="submit">Count me in ↗</button>
+                </form>
+
+                <small id="newsletterMessage"></small>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <h3>✳ AFTERGLOW</h3>
+            <p>Made for the moments that matter.</p>
+            <p>© 2026 AFTERGLOW STUDIO</p>
+        </div>
+    </footer>
+
+    <!-- EVENT DETAILS MODAL -->
+    <div class="modal-backdrop" id="eventModal">
+        <div class="modal">
+            <button class="close-btn" onclick="closeModal('eventModal')">×</button>
+            <div id="eventModalContent"></div>
+        </div>
+    </div>
+
+    <!-- REGISTRATION MODAL -->
+    <div class="modal-backdrop" id="registerModal">
+
+        <div class="modal register-modal">
+
+            <button class="close-btn"
+                    onclick="closeModal('registerModal')">×</button>
+
+            <h2 id="registerTitle">You're <span>invited.</span></h2>
+
+            <p>A few details and you're on the list.</p>
+
+            <form id="registrationForm" novalidate>
+
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName"
+                       placeholder="Enter your name">
+                <small id="nameError" class="error"></small>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                       placeholder="Enter your email">
+                <small id="emailError" class="error"></small>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone"
+                       placeholder="10-digit mobile number">
+                <small id="phoneError" class="error"></small>
+
+                <label for="eventSelect">Select Event</label>
+                <select id="eventSelect">
+                    <option value="">Choose an event</option>
+                </select>
+                <small id="eventError" class="error"></small>
+
+                <button type="submit" class="primary-btn submit-btn">
+                    Confirm My Spot ↗
+                </button>
+
+            </form>
+
+            <div id="successPanel" hidden>
+                <h2>✓ You're on the list!</h2>
+                <p id="successText"></p>
+                <button class="primary-btn" onclick="closeModal('registerModal')">
+                    Done
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
